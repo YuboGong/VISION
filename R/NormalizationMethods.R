@@ -167,7 +167,7 @@ NormData <- function(data, rowOffsets = NULL, rowScaleFactors = NULL,
         if (mean(colFill) < .5){
             data <- as(data, "dgCMatrix")
         } else {
-            data <- as(data, "dgeMatrix")
+            data <- as(as(as(data, "dMatrix"), "generalMatrix"), "unpackedMatrix")
         }
     }
 
